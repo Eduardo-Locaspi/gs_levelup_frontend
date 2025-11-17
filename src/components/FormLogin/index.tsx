@@ -18,11 +18,37 @@ export default function FormLogin(){
 
     }
 
-    const handleLogin = (e)=>{
+    const handleLogin = async (e:React.FormEvent)=>{
             e.preventDefault()
+            
+
+            try{
+                const login_endpoint = ""
+                const response = await fetch(login_endpoint,{
+                    method:"POST", // metodo
+                    headers:{'Content-Type': 'application/json',}, // aceita JSON
+                    // converte obj. javascript(json) em string
+                    body: JSON.stringify(formValues) // oq vai para o backend
+                })
+            
+                // se a resposta for diferente de 200(OK)
+                if (!response.ok) {
+                // Se o status for 401 (Não Autorizado) ou outro erro
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Falha na autenticação');
+                }
+
+        
+
+            
+            }catch (error){
+                console.error("Erro no login:", error.message)
+            }
 
             console.log("submit:" ,formValues)
-            }
+
+            
+        }
     
     
     console.log("FormValues: ",formValues)
