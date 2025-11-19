@@ -1,7 +1,7 @@
-import AreaLogin from "../../routes/AreaLogin";
+import AreaCadastro from "../../routes/AreaCadastro";
 
 
-export default function LoginPage(){
+export default function CadastroPage(){
 
 
     return(
@@ -19,7 +19,7 @@ export default function LoginPage(){
             </div>
 
             <div className="w-1/2 flex justify-center items-center">
-                <AreaLogin/>
+                <AreaCadastro/>
             </div>
         </div>
     )
