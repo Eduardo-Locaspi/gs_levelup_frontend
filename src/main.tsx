@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         children:[
           {
             path:"/pessoas",
-            element:<CadastroPage />
+            element:<CadastroPage ator={}/> //dependendo do ator o componente de cadastro vai mudar
           },
           {
             path:"/empresas",
