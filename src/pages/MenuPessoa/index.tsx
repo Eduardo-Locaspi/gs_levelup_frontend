@@ -13,7 +13,7 @@ export default function MenuPessoa(){
             
             <div>
                 {/* Area Funcional do menu de pessoas */}
-                <
+                
             </div>
 
             
