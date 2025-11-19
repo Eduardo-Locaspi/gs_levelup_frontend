@@ -1,0 +1,14 @@
+
+import FormLogin from "../../components/FormLogin";
+
+
+export default function AreaCadastro(){
+
+
+    return(
+        <div className="flex flex-col text-center border-2 rounded-md px-5">
+            <h1 className="text-4xl my-5">CADASTRO</h1>
+            <FormLogin/>
+        </div>
+    )
+}
