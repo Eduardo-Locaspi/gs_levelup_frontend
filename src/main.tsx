@@ -1,45 +1,53 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from '../src/App.tsx'
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import LoginPage from './pages/LoginPage/index.tsx'
 import CadastroPage from './pages/CadastroPage/index.tsx'
+import Quem_Sou_Eu_Page from './pages/Quem_Sou_Eu_Page/index.tsx'
+import App from './App.tsx'
 
 
-const router = createBrowserRouter([
+const routerPrincipal = createBrowserRouter([
   {
     path:"/",
     element:<App/>,
     children:[
+      //CAMINHO PADRÃO
       {
-        path:"/login",
-        element:<LoginPage/>
+        path:"/",
+        element:<LoginPage/>,
       },
+
+      // LOGIN
+      {
+        path:"/quemsoueu",
+        element:<Quem_Sou_Eu_Page/>,
+      },
+
+      // CADASTRO
       {
         path:"/cadastro",
         children:[
           {
             path:"/pessoas",
-            element:<CadastroPage ator={}/> //dependendo do ator o componente de cadastro vai mudar
+            element:<CadastroPage/>
           },
           {
             path:"/empresas",
           },
           {path:"/academico"},
         ]
-      },
-      {
-        path:"/quemsoueu",
-        element: </> // Componente que retorna quem é a pessoa se cadastrando : pessoa, profissional, inst academica
       }
     ]
-  }
+  },
+  
+
 ])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={routerPrincipal}/>
   </StrictMode>,
 )
