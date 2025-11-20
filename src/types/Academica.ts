@@ -1,17 +1,18 @@
-// Estrutura de dados para o cadastro de Instituição Académica, baseada no DDL.
-// A tabela T_INST_ACADEMICA requer campos de T_LVUP_LOGIN e T_ENDERECO para ser preenchida.
-export type InstituicaoCadastro = {
-    // T_LVUP_LOGIN (Para id_login)
+// Estrutura de dados para o cadastro de Instituição Acadêmica, baseada no DDL.
+// O cadastro completo envolve dados de T_LVUP_LOGIN, T_INST_ACADEMICA e T_ENDERECO.
+
+export type InstituicaoAcademicaCadastro = {
+    // 1. T_LVUP_LOGIN (Necessário para id_login)
     login: string;
     senha: string;
     confirmar_senha: string;
     
-    // T_INST_ACADEMICA (Campos nm_instAcademica e cnpj_inst_academica)
-    nome_instituicao: string; // nm_instAcademica
-    cnpj: string; // cnpj_inst_academica
-    // O campo st_ativo (Status) será definido pelo backend como 'S' no momento do cadastro.
-    
-    // T_ENDERECO (Para id_endereco)
+    // 2. T_INST_ACADEMICA (Campos de entrada direta)
+    nome_instituicao: string; // nm_instAcademica (VARCHAR2(150) NOT NULL)
+    cnpj: string; // cnpj_inst_academica (VARCHAR2(20) NOT NULL UNIQUE)
+    // O campo st_ativo ('S'/'N') será definido pelo backend como 'S' no momento do cadastro.
+
+    // 3. T_ENDERECO (Para id_endereco)
     cep: string;
     pais: string;
     estado: string;

@@ -51,6 +51,8 @@ export default function FormCadastroPessoa() {
         
         console.log("Dados de Cadastro para envio (DDL-compliant):", formData);
 
+      
+
         // Simulação de sucesso
         setSuccess("Cadastro iniciado com sucesso! Aguardando a integração com o backend.");
 

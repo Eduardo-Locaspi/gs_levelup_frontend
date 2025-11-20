@@ -6,48 +6,11 @@ import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import LoginPage from './pages/LoginPage/index.tsx'
 import CadastroPage from './pages/CadastroPage/index.tsx'
 import Quem_Sou_Eu_Page from './pages/Quem_Sou_Eu_Page/index.tsx'
-import App from './App.tsx'
+// import App from './App.tsx'
 import FormCadastroPessoa from './components/FormCadastro/FormCadastroPessoa/index.tsx'
 import FormCadastroEmpresa from './components/FormCadastro/FormCadastroEmpresa/index.tsx'
 import FormCadastroInstituicaoAcademica from './components/FormCadastro/FormCadastroInstituicaoAcademica/index.tsx'
 
-
-// const routerPrincipal = createBrowserRouter([
-//   {
-//     path:"/",
-//     element:<App/>,
-//     children:[
-//       //CAMINHO PADRÃO
-//       {
-//         path:"/",
-//         element:<LoginPage/>,
-//       },
-
-//       // LOGIN
-//       {
-//         path:"/quemsoueu",
-//         element:<Quem_Sou_Eu_Page/>,
-//       },
-
-//       // CADASTRO
-//       {
-//         path:"/cadastro",
-//         children:[
-//           {
-//             path:"/pessoas",
-//             element:<CadastroPage/>
-//           },
-//           {
-//             path:"/empresas",
-//           },
-//           {path:"/academico"},
-//         ]
-//       }
-//     ]
-//   },
-  
-
-// ])
 
 const router2 = createBrowserRouter([
   {
