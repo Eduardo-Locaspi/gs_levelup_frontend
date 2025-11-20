@@ -30,14 +30,23 @@ export default function FormLogin() {
                 body: JSON.stringify(formValues)
             });
             
-            const responseData = await response.json(); // Tentar ler o corpo da resposta
+            const responseBody = await response.text(); 
 
             // Se a resposta for diferente de 200 (OK), trata como erro
             if (!response.ok) {
                 // Se o backend retornou uma mensagem de erro, use-a. Caso contrário, use uma mensagem padrão.
-                const errorMessage = responseData.message || `Falha na autenticação. Status: ${response.status}`;
+                const errorMessage = responseBody || `Falha na autenticação. Status: ${response.status}`;
                 throw new Error(errorMessage);
             }
+
+             
+            let responseData;
+            try {
+                responseData = JSON.parse(responseBody);
+            } catch (jsonError) {
+                throw new Error("Erro ao processar a resposta do servidor. Resposta não é um JSON válido.");
+            }
+
 
             // --- 3. SUCESSO NO LOGIN ---
             
@@ -53,7 +62,7 @@ export default function FormLogin() {
                 
                 // 5. Redirecionar o usuário para a Dashboard após o login.
                 // Usamos { replace: true } para que o botão 'voltar' do navegador não leve à página de Login novamente.
-                navigate('/cadastro/pessoas', { replace: true });
+                navigate('/dashboard', { replace: true });
             } else {
                  throw new Error("Login bem-sucedido, mas o token de autenticação não foi recebido.");
             }
