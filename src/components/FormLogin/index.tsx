@@ -24,13 +24,14 @@ export default function FormLogin() {
         setError(null); // Limpar erros anteriores
         
         try {
+            // FAZ A REQUISICAO E RECEPÇÃO E GUARDA NA VARIAVEL RESPONSE
             const response = await fetch(login_endpoint, {
                 method:"POST",
                 headers:{'Content-Type': 'application/json'},
-                body: JSON.stringify(formValues)
+                body: JSON.stringify(formValues) // transforma javascript em  JSON
             });
             
-            const responseBody = await response.text(); 
+            const responseBody = await response.text(); // transforma JSON em text/string
 
             // Se a resposta for diferente de 200 (OK), trata como erro
             if (!response.ok) {
@@ -44,7 +45,8 @@ export default function FormLogin() {
             try {
                 responseData = JSON.parse(responseBody);
             } catch (jsonError) {
-                throw new Error("Erro ao processar a resposta do servidor. Resposta não é um JSON válido.");
+                console.error("Erro ao parsear JSON da resposta:", jsonError);
+                throw new Error("Erro ao processar a resposta do servidor");
             }
 
 

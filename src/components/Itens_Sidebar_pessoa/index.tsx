@@ -11,7 +11,7 @@ export default function Itens_Sidebar_pessoa(){
             </li> 
 
             <li>
-                <Link to={"/"}>Outro item</Link>
+                <Link to={"/"}></Link>
             </li>
             <li>
                 <Link to={"/minhaconta"}>Conta</Link>
