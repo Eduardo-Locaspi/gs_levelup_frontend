@@ -1,26 +1,12 @@
-import AreaCadastro from "../../routes/AreaCadastro";
-
+import AreaCadastro from "../../routes/AreaCadastro/index";
 
 export default function CadastroPage(){
-
-
     return(
-        // Dividida metade metade
-        <div className="flex h-screen">
-            <div className="w-1/2 bg-gray-100 flex flex-col justify-center items-center p-8"> 
-                
-                {/* Logo */}
-                <div className="text-4xl font-extrabold text-blue-600">GS_FRONTEND</div>
-                
-                {/* Subtitulo - slogan */}
-                <p className="mt-4 text-xl text-gray-700 text-center">
-                    A melhor solução para gerenciar seu negócio.
-                </p>
-            </div>
-
-            <div className="w-1/2 flex justify-center items-center">
-                <AreaCadastro/>
-            </div>
+        // Modificado para usar min-h-screen e pt-10/pb-10 e removido items-center.
+        // Isso garante que o conteúdo comece no topo da tela e o título não seja 
+        // empurrado para fora quando o formulário é longo, resolvendo o problema de visibilidade.
+        <div className="flex min-h-screen w-full justify-center p-4 pt-10 pb-10 bg-gray-100">
+            <AreaCadastro/>
         </div>
     )
 }
