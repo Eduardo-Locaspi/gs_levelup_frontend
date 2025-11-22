@@ -1,4 +1,4 @@
-import Itens_Sidebar_pessoa from "../../components/Itens_Sidebar_pessoa";
+import Itens_Sidebar_pessoa from "../../../components/PESSOA/Itens_Sidebar_pessoa/index";
 
 
 export default function AreaSidebar_Pessoa(){
