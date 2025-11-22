@@ -27,7 +27,7 @@ export type EmpresaCadastro = {
     cidade: string;
     bairro: string;
     rua: string;
-    numero: string;
+    numero: number;
     complemento: string; // Opcional
     
     // Campos anteriormente considerados adicionais (sigla, data_fundacao) foram removidos para estrita conformidade com o DDL de T_EMPRESA.

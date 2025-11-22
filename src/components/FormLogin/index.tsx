@@ -11,7 +11,7 @@ export default function FormLogin() {
     const [error, setError] = useState<string | null>(null); // Estado para exibir erros ao usuário
     
     // URL de backend que você deve configurar
-    const login_endpoint = "http://localhost:8080/login/login"; 
+    const login_endpoint = "http://localhost:8080/auth/login"; 
 
     
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {

@@ -16,6 +16,6 @@ export type PessoaCadastro = {
     cidade: string;
     bairro: string;
     rua: string;
-    numero: string; 
-    complemento: string; // Opcional
+    numero: number; 
+    complemento?: string; //opcional
 }
