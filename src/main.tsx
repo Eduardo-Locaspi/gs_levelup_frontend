@@ -18,6 +18,7 @@ import MenuInstituicao from "./pages/InstituicaoPage/index.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import Area_MeusEventos from "./routes/Pessoa/AreaFuncional_Pessoa/Area_MeusEventos/index.tsx";
 import Area_EventosDisponiveis from "./routes/Pessoa/AreaFuncional_Pessoa/Area_EventosDisponiveis/index.tsx";
+import Area_MinhaConta from "./routes/Pessoa/AreaFuncional_Pessoa/Area_MinhaConta/index.tsx";
 
 const router2 = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
@@ -37,6 +38,7 @@ const router2 = createBrowserRouter([
     children: [
       { path: "", element: <Area_MeusEventos /> }, // rota padrão
       { path: "eventosdisponiveis", element: <Area_EventosDisponiveis /> }, // relativa
+      { path:"minhaconta",element:<Area_MinhaConta/>}
     ],
   },
   { path: "/empresa/areaprincipal", element: <MenuEmpresa /> },
