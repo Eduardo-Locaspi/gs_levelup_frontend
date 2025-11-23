@@ -19,6 +19,11 @@ import { AuthProvider } from "./context/AuthContext.tsx";
 import Area_MeusEventos from "./routes/Pessoa/AreaFuncional_Pessoa/Area_MeusEventos/index.tsx";
 import Area_EventosDisponiveis from "./routes/Pessoa/AreaFuncional_Pessoa/Area_EventosDisponiveis/index.tsx";
 import Area_MinhaConta from "./routes/Pessoa/AreaFuncional_Pessoa/Area_MinhaConta/index.tsx";
+import Area_MinhasDemandas from "./routes/Empresa/AreaFuncional_Empresa/Area_MinhasDemandas/index.tsx";
+import Area_CadastrarDemanda from "./routes/Empresa/AreaFuncional_Empresa/Area_CadastrarDemanda/index.tsx";
+import Area_MinhaConta_empresa from "./routes/Empresa/AreaFuncional_Empresa/Area_MinhaConta/index.tsx";
+import Area_MinhaConta_instituicao from "./routes/InstituicaoAcademica/AreaFuncional_Instituicao/Area_MinhaConta/index.tsx";
+import Area_EventosCadastrados from "./routes/InstituicaoAcademica/AreaFuncional_Instituicao/Area_EventosCadastrados/index.tsx";
 
 const router2 = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
@@ -41,8 +46,24 @@ const router2 = createBrowserRouter([
       { path:"minhaconta",element:<Area_MinhaConta/>}
     ],
   },
-  { path: "/empresa/areaprincipal", element: <MenuEmpresa /> },
-  { path: "/instituicao/areapricipal", element: <MenuInstituicao /> },
+  { 
+    path: "/empresa/areaprincipal", 
+    element: <MenuEmpresa /> ,
+    children:[
+      { path:"",element:<Area_MinhasDemandas/>},
+      {path:"cadastrarnovademanda",element:<Area_CadastrarDemanda/>},
+      {path:"minhaconta",element:<Area_MinhaConta_empresa/>}
+    ]
+  },
+  { 
+  path: "/instituicao/areaprincipal", 
+  element: <MenuInstituicao />,
+  children:[
+    {path:"",element:<Area_EventosCadastrados /> },
+    {path:"minhaconta",element:<Area_MinhaConta_instituicao/>}
+  ]
+}
+
 ]);
 
 createRoot(document.getElementById("root")!).render(
