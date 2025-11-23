@@ -19,17 +19,15 @@ export default function Area_MinhaConta() {
 
     async function carregarDados() {
       try {
-        // 1) Buscar DADOS DA PESSOA
         const respPessoa = await fetch(
           `http://localhost:8080/listagem/pessoa/dadospessoais/${auth.id_usuario}`
         );
         const pessoaData = await respPessoa.json();
         setPessoa(pessoaData);
-        console.log("ID ENDERECO:", pessoaData.id_endereco);
 
-        // 2) Buscar ENDEREÇO usando id_usuario retornado no DTO da Pessoa
-        const respEndereco = await fetch(`http://localhost:8080/listagem/minhaconta/dadosendereco/${pessoaData.id_endereco}`);
-
+        const respEndereco = await fetch(
+          `http://localhost:8080/listagem/minhaconta/dadosendereco/${pessoaData.id_endereco}`
+        );
         const enderecoData = await respEndereco.json();
         setEndereco(enderecoData);
 
@@ -43,22 +41,22 @@ export default function Area_MinhaConta() {
     carregarDados();
   }, [auth]);
 
-  if (loading) return <p>Carregando...</p>;
+  if (loading) return <p className="text-center mt-6 text-gray-500">Carregando...</p>;
 
   return (
-    <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 mt-6">
-      <h2 className="text-2xl font-bold mb-4 text-center">Minha Conta</h2>
+    <div className="max-w-3xl mx-auto p-6 mt-6 space-y-6">
+      <h2 className="text-3xl font-bold text-center text-gray-800">Minha Conta</h2>
 
       {/* Dados Pessoais */}
       {pessoa && (
-        <div className="space-y-3">
+        <div className="bg-white shadow-md rounded-xl p-6 space-y-3">
           <MinhaConta_DadosPessoais {...pessoa} />
         </div>
       )}
 
       {/* Endereço */}
       {endereco && (
-        <div className="mt-4">
+        <div className="bg-white shadow-md rounded-xl p-6 space-y-3">
           <MinhaConta_Endereco {...endereco} />
         </div>
       )}
