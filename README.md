@@ -158,6 +158,10 @@ Front-end: https://github.com/Eduardo-Locaspi/gs_levelup_frontend.git
 
 Back-end: https://github.com/victoralves10/levelup-DDD-java
 
+Links dos deploys:
+Frontend: https://levelup-six-delta.vercel.app/
+BAckend: https://levelup-jtfg.onrender.com/
+
 🧑‍💻 Autores e Créditos
 Eduardo Batista Locaspi — RM 561713
 https://github.com/Eduardo-Locaspi
@@ -169,3 +173,10 @@ https://github.com/victoralves10
 Nome	E-mail
 Eduardo Batista Locaspi	rm561713@fiap.com.br
 Victor Alves Lopes	rm561833@fiap.com.br
+
+
+Vídeo Pitch
+link: https://www.youtube.com/shorts/_mLTC6II3CQ
+
+Imagens Plataforma:
+https://docs.google.com/document/d/1ddiYhCDwlibD-CpIXiWSRc8a_vupulgZJibdoX8aABo/edit?usp=sharing
