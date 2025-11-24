@@ -18,13 +18,13 @@ export default function EventosDisponiveis() {
       setError(null);
 
       // Todos os eventos
-      const resEventos = await fetch(`http://localhost:8080/listagem/eventos`);
+      const resEventos = await fetch("https://levelup-jtfg.onrender.com/listagem/eventos");
       if (!resEventos.ok) throw new Error("Erro ao buscar eventos");
       const dataEventos: CardEventoType[] = await resEventos.json();
       setEventos(dataEventos);
 
       // Eventos do usuário
-      const resInscritos = await fetch(`http://localhost:8080/listagem/pessoa/${auth.id_usuario}`);
+      const resInscritos = await fetch(`https://levelup-jtfg.onrender.com/listagem/pessoa/${auth.id_usuario}`);
       if (!resInscritos.ok) throw new Error("Erro ao buscar eventos do usuário");
       const dataInscritos: CardEventoType[] = await resInscritos.json();
       setInscritos(dataInscritos.map(e => e.id_evento));
@@ -44,7 +44,7 @@ export default function EventosDisponiveis() {
     if (!auth?.id_usuario) return;
 
     try {
-      const res = await fetch("http://localhost:8080/evento/inscricao", {
+      const res = await fetch("https://levelup-jtfg.onrender.com/evento/inscricao", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ idPessoa: auth.id_usuario, idEvento: id_evento }),
@@ -64,7 +64,7 @@ export default function EventosDisponiveis() {
     if (!auth?.id_usuario) return;
 
     try {
-      const res = await fetch(`http://localhost:8080/evento/remocao?id_pessoa=${auth.id_usuario}&id_evento=${id_evento}`, {
+      const res = await fetch(`https://levelup-jtfg.onrender.com/evento/remocao?id_pessoa=${auth.id_usuario}&id_evento=${id_evento}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Falha ao remover inscrição");

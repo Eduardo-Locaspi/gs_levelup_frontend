@@ -47,7 +47,7 @@ export default function FormCadastroEmpresa() {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/auth/cadastro/empresa", {
+            const response = await fetch("https://levelup-jtfg.onrender.com/auth/cadastro/empresa", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

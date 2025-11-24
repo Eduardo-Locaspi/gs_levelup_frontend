@@ -14,7 +14,7 @@ export default function FormLogin() {
 
   const [error, setError] = useState<string | null>(null);
 
-  const login_endpoint = "http://localhost:8080/auth/login";
+  const login_endpoint = "https://levelup-jtfg.onrender.com/auth/login";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

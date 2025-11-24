@@ -21,14 +21,14 @@ export default function Area_MinhaConta_empresa() {
       try {
         // Endpoint atualizado para buscar dados da empresa
         const respEmpresa = await fetch(
-          `http://localhost:8080/listagem/empresa/dadosEmpresariais/${auth.id_usuario}`
+          `https://levelup-jtfg.onrender.com/listagem/empresa/dadosEmpresariais/${auth.id_usuario}`
         );
         const empresaData = await respEmpresa.json();
         setEmpresa(empresaData);
 
         // Endpoint para buscar endereço da empresa permanece o mesmo
         const respEndereco = await fetch(
-          `http://localhost:8080/listagem/minhaconta/dadosendereco/${empresaData.id_endereco}`
+          `https://levelup-jtfg.onrender.com/listagem/minhaconta/dadosendereco/${empresaData.id_endereco}`
         );
         const enderecoData = await respEndereco.json();
         setEndereco(enderecoData);

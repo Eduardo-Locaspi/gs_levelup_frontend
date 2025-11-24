@@ -20,13 +20,13 @@ export default function Area_MinhaConta() {
     async function carregarDados() {
       try {
         const respPessoa = await fetch(
-          `http://localhost:8080/listagem/pessoa/dadospessoais/${auth.id_usuario}`
+          `https://levelup-jtfg.onrender.com/listagem/pessoa/dadospessoais/${auth.id_usuario}`
         );
         const pessoaData = await respPessoa.json();
         setPessoa(pessoaData);
 
         const respEndereco = await fetch(
-          `http://localhost:8080/listagem/minhaconta/dadosendereco/${pessoaData.id_endereco}`
+          `https://levelup-jtfg.onrender.com/listagem/minhaconta/dadosendereco/${pessoaData.id_endereco}`
         );
         const enderecoData = await respEndereco.json();
         setEndereco(enderecoData);

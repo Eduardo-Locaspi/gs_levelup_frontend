@@ -21,7 +21,7 @@ export default function FormDemanda() {
 
     try {
       const res = await fetch(
-        `http://localhost:8080/listagem/vagas/nova-demanda/${auth.id_usuario}`,
+        `https://levelup-jtfg.onrender.com/listagem/vagas/nova-demanda/${auth.id_usuario}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

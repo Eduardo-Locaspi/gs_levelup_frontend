@@ -55,7 +55,7 @@ export default function FormCadastroPessoa() {
 
         // Enviar dados para backend
         try {
-            const response = await fetch("http://localhost:8080/auth/cadastro/pessoa", {
+            const response = await fetch("https://levelup-jtfg.onrender.com/auth/cadastro/pessoa", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
