@@ -16,7 +16,7 @@ export default function MeusEventos() {
       setLoading(true);
       setError(null);
 
-      const res = await fetch(`http://localhost:8080/listagem/pessoa/${auth.id_usuario}`);
+      const res = await fetch(`https://levelup-jtfg.onrender.com/listagem/pessoa/${auth.id_usuario}`);
       if (!res.ok) throw new Error("Erro ao buscar eventos");
       const data: CardEventoType[] = await res.json();
       setEventos(data);
@@ -36,7 +36,7 @@ export default function MeusEventos() {
     if (!auth?.id_usuario) return;
 
     try {
-      const res = await fetch(`http://localhost:8080/evento/remocao?id_pessoa=${auth.id_usuario}&id_evento=${id_evento}`, {
+      const res = await fetch(`https://levelup-jtfg.onrender.com/evento/remocao?id_pessoa=${auth.id_usuario}&id_evento=${id_evento}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Falha ao remover inscrição");

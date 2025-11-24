@@ -21,14 +21,14 @@ export default function Area_MinhaConta_instituicao() {
       try {
         // Endpoint para buscar dados da instituição
         const respInstituicao = await fetch(
-          `http://localhost:8080/listagem/minhaconta/dadosinstituicao/${auth.id_usuario}`
+          `https://levelup-jtfg.onrender.com/listagem/minhaconta/dadosinstituicao/${auth.id_usuario}`
         );
         const instituicaoData = await respInstituicao.json();
         setInstituicao(instituicaoData);
 
         // Endpoint para buscar endereço da instituição
         const respEndereco = await fetch(
-          `http://localhost:8080/listagem/minhaconta/dadosendereco/${instituicaoData.id_endereco}`
+          `https://levelup-jtfg.onrender.com/listagem/minhaconta/dadosendereco/${instituicaoData.id_endereco}`
         );
         const enderecoData = await respEndereco.json();
         setEndereco(enderecoData);

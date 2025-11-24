@@ -10,7 +10,7 @@ export default function EventosCadastrados() {
   useEffect(() => {
     async function fetchEventos() {
       try {
-        const res = await fetch("http://localhost:8080/listagem/eventos");
+        const res = await fetch("https://levelup-jtfg.onrender.com/listagem/eventos");
         if (!res.ok) throw new Error("Erro ao buscar eventos");
         const data: CardEventoType[] = await res.json();
         setEventos(data);

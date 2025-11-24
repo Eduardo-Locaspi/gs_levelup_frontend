@@ -14,7 +14,7 @@ export default function MinhasDemandas() {
     async function carregarDemandas() {
       try {
         const resp = await fetch(
-          `http://localhost:8080/listagem/minhas-demandas/${auth.id_usuario}`
+          `https://levelup-jtfg.onrender.com/listagem/minhas-demandas/${auth.id_usuario}`
         );
         const dados: Demanda[] = await resp.json();
         setDemandas(dados);
