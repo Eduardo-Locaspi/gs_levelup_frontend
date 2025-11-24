@@ -1,6 +1,15 @@
 import type { CardEventoProps } from "../../../types/Funcoes/CardEventoProps";
 
 export default function CardEvento({ evento, isInscrito, onInscrever, onRemover }: CardEventoProps) {
+  const handleClick = () => {
+    if (isInscrito && onRemover) {
+      onRemover(evento.id_evento);
+    } 
+    else if (!isInscrito && onInscrever) {
+      onInscrever(evento.id_evento);
+    }
+  };
+
   return (
     <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]">
       
@@ -16,10 +25,9 @@ export default function CardEvento({ evento, isInscrito, onInscrever, onRemover 
         </div>
       </div>
 
-      {/* Botão de ação */}
       <div className="flex justify-end">
         <button
-          onClick={() => isInscrito ? onRemover(evento.id_evento) : onInscrever(evento.id_evento)}
+          onClick={handleClick}
           className={`px-4 py-2 rounded-lg font-medium text-white shadow-md transition-colors duration-300 
                       ${isInscrito ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'}`}
         >
